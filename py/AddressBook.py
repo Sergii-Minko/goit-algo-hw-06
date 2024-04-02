@@ -39,7 +39,7 @@ class Record:
     def edit_phone(self, edit_number, new_number):
         phone = self.find_phone(edit_number)
         if phone:
-            phone.value = new_number
+            self.phones[self.phones.index(phone)] = Phone(new_number)
             return self.phones
         else:
             raise ValueError(f"Телефонний номер {edit_number} не знайдено.")
